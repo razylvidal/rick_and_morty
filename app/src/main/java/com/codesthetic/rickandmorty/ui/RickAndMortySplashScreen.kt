@@ -1,4 +1,4 @@
-package com.codesthetic.rickandmorty
+package com.codesthetic.rickandmorty.ui
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale.Companion.Fit
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import com.codesthetic.rickandmorty.R
 import com.codesthetic.rickandmorty.ui.navigation.Screens
 import kotlinx.coroutines.delay
 

@@ -1,13 +1,11 @@
 package com.codesthetic.rickandmorty.ui.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.codesthetic.rickandmorty.RickAndMortySplashScreen
+import com.codesthetic.rickandmorty.ui.RickAndMortySplashScreen
+import com.codesthetic.rickandmorty.ui.home.MainScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController){
@@ -19,7 +17,7 @@ fun SetupNavGraph(navController: NavHostController){
             RickAndMortySplashScreen(navController)
         }
         composable(route = Screens.Home.route){
-            Box(modifier = Modifier.fillMaxSize())
+            MainScreen()
         }
     }
 }
