@@ -1,4 +1,4 @@
-package com.codesthetic.rickandmorty.ui.home
+package com.codesthetic.rickandmorty.ui.components
 
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -16,7 +16,7 @@ fun TopBar(){
                 text = "Rick And Morty",
                 fontSize = 18.sp,
                 color = ThemeColor8,
-                fontFamily = FontFamily.Monospace
+                fontFamily = FontFamily.SansSerif
             )
         },
         backgroundColor = ThemeColor1,

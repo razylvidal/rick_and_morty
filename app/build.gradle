@@ -100,4 +100,12 @@ dependencies {
 
     implementation "androidx.navigation:navigation-compose:2.6.0-rc01"
 
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
+
+    // Material Search Bar
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+
+    // Shimmer
+    implementation "me.vponomarenko:compose-shimmer:1.0.0"
+
 }

@@ -10,17 +10,18 @@ import com.codesthetic.rickandmorty.ui.home.screens.EpisodesScreen
 import com.codesthetic.rickandmorty.ui.home.screens.LocationScreen
 
 @Composable
-fun BottomNavGraph(navController: NavHostController){
+fun BottomNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = BottomBarNavigator.Characters.route ){
-        composable(route = BottomBarNavigator.Characters.route){
+        startDestination = BottomBarNavigator.Characters.route
+    ) {
+        composable(route = BottomBarNavigator.Characters.route) {
             CharacterScreen()
         }
-        composable(route = BottomBarNavigator.Location.route){
+        composable(route = BottomBarNavigator.Location.route) {
             LocationScreen()
         }
-        composable(route = BottomBarNavigator.Episode.route){
+        composable(route = BottomBarNavigator.Episode.route) {
             EpisodesScreen()
         }
     }

@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Scaffold
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -19,12 +19,13 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.codesthetic.rickandmorty.ui.components.TopBar
 import com.codesthetic.rickandmorty.ui.navigation.BottomNavGraph
-import com.codesthetic.rickandmorty.ui.theme.ThemeColor1
+import com.codesthetic.rickandmorty.ui.theme.ThemeColor2
 import com.codesthetic.rickandmorty.ui.theme.ThemeColor7
 import com.codesthetic.rickandmorty.ui.theme.ThemeColor8
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
@@ -32,7 +33,7 @@ fun MainScreen() {
         topBar = { TopBar() },
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) {
-        BottomNavGraph(navController = navController, )
+        BottomNavGraph(navController = navController)
     }
 }
 
@@ -45,10 +46,10 @@ fun BottomNavigationBar(navController: NavHostController) {
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
+    val currentRoute = navBackStackEntry?.destination
 
     BottomNavigation(
-        backgroundColor = ThemeColor1,
+        backgroundColor = ThemeColor2,
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(20.dp, 20.dp, 0.dp, 0.dp))
@@ -72,7 +73,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                 selectedContentColor = ThemeColor7,
                 unselectedContentColor = Color.White.copy(0.4f),
                 alwaysShowLabel = true,
-                selected = currentRoute == item.route,
+                selected = currentRoute?.route == item.route,
                 onClick = {
                     navController.navigate(item.route){
                         navController.graph.startDestinationRoute?.let { route ->

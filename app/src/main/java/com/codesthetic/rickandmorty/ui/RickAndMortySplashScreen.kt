@@ -6,7 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -15,7 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale.Companion.Fit
+import androidx.compose.ui.layout.ContentScale.Companion.FillWidth
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
@@ -45,21 +45,16 @@ fun RickAndMortySplashScreen(navController: NavHostController) {
 fun Splash(alpha : Float) {
     Box(
         modifier = Modifier
-            .background(Color.Black)
-            .fillMaxSize()
+            .background(Color.White)
+            .fillMaxWidth()
     ) {
         Image(
             painter = painterResource(id = R.drawable.rick_and_morty),
             contentDescription = "",
-            contentScale = Fit,
+            contentScale = FillWidth,
             modifier = Modifier.fillMaxSize(),
             alpha = alpha
         )
-
-        Text(
-            text = "App Version : "
-        )
-
     }
 }
 
