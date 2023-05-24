@@ -15,7 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale.Companion.FillWidth
+import androidx.compose.ui.layout.ContentScale.Companion.Crop
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
@@ -51,7 +51,7 @@ fun Splash(alpha : Float) {
         Image(
             painter = painterResource(id = R.drawable.rick_and_morty),
             contentDescription = "",
-            contentScale = FillWidth,
+            contentScale = Crop,
             modifier = Modifier.fillMaxSize(),
             alpha = alpha
         )
